@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: #F6F7FB;
+  color: #1B2230;
+  overflow: hidden;
+}
+
+body {
+  position: fixed;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* GENERAL */
+.screen {
+  display: none;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  -webkit-overflow-scrolling: touch;
+}
+
+.screen.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px;
+}
+
+/* HEADER */
+.header {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #6C63FF 0%, #5148DF 100%);
+  color: white;
+  border-radius: 0 0 20px 20px;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(108, 99, 255, 0.1);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1B2230;
+}
+
+.card-subtitle {
+  font-size: 13px;
+  color: #7D8595;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #1B2230;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 50px;
+  -webkit-appearance: none;
+  appearance: none;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6C63FF 0%, #5148DF 100%);
+  color: white;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: #E8E8F5;
+  color: #6C63FF;
+}
+
+.btn-secondary:active {
+  background: #DDD5F0;
+}
+
+.btn-small {
+  padding: 12px 16px;
+  font-size: 14px;
+  min-height: 44px;
+}
+
+.btn-text {
+  background: none;
+  color: #6C63FF;
+  padding: 12px;
+}
+
+/* QUESTIONS */
+.question-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #E8E8F5;
+  border-radius: 3px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6C63FF, #5148DF);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.question-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1B2230;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.option {
+  background: white;
+  border: 2px solid #E8E8F5;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  color: #1B2230;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.option:active {
+  transform: scale(0.98);\n}\n\n.option.selected {\n  background: linear-gradient(135deg, #6C63FF 0%, #5148DF 100%);\n  color: white;\n  border-color: #6C63FF;\n}\n\n/* WELCOME SCREEN */\n.welcome-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: 100%;\n  padding: 40px 20px;\n  text-align: center;\n}\n\n.logo {\n  font-size: 64px;\n  margin-bottom: 24px;\n}\n\n.welcome-title {\n  font-size: 28px;\n  font-weight: 700;\n  color: #1B2230;\n  margin-bottom: 12px;\n}\n\n.welcome-subtitle {\n  font-size: 16px;\n  color: #7D8595;\n  margin-bottom: 32px;\n  line-height: 1.5;\n}\n\n.welcome-footer {\n  font-size: 13px;\n  color: #7D8595;\n  margin-top: 32px;\n}\n\n/* PROFILE RESULT */\n.profile-result {\n  text-align: center;\n}\n\n.profile-name {\n  font-size: 24px;\n  font-weight: 700;\n  color: #6C63FF;\n  margin: 20px 0;\n}\n\n.profile-description {\n  font-size: 14px;\n  color: #7D8595;\n  line-height: 1.6;\n  margin-bottom: 24px;\n}\n\n.profile-traits {\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 12px;\n  margin-bottom: 24px;\n}\n\n.trait {\n  background: #F6F7FB;\n  padding: 12px;\n  border-radius: 12px;\n  font-size: 14px;\n  border-left: 4px solid #6C63FF;\n}\n\n.trait-emoji {\n  font-size: 18px;\n  margin-right: 8px;\n}\n\n/* DASHBOARD */\n.greeting {\n  font-size: 24px;\n  font-weight: 700;\n  color: #1B2230;\n  margin-bottom: 8px;\n}\n\n.greeting-subtitle {\n  font-size: 14px;\n  color: #7D8595;\n  margin-bottom: 24px;\n}\n\n.mission-card {\n  background: linear-gradient(135deg, #6C63FF 0%, #5148DF 100%);\n  color: white;\n  margin-bottom: 24px;\n}\n\n.mission-emoji {\n  font-size: 32px;\n  margin-bottom: 12px;\n}\n\n.mission-title {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 8px;\n}\n\n.mission-subtitle {\n  font-size: 13px;\n  opacity: 0.9;\n  margin-bottom: 16px;\n}\n\n.mission-xp {\n  font-size: 12px;\n  opacity: 0.8;\n}\n\n/* DELIVERABLES */\n.deliverable-card {\n  display: flex;\n  flex-direction: column;\n  margin-bottom: 12px;\n}\n\n.deliverable-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 12px;\n}\n\n.deliverable-title {\n  font-size: 15px;\n  font-weight: 600;\n}\n\n.deliverable-date {\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.deliverable-date.urgent {\n  color: #E56770;\n}\n\n.deliverable-date.warning {\n  color: #EFB94E;\n}\n\n.deliverable-date.safe {\n  color: #31B67A;\n}\n\n.progress-container {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n\n.progress-bar-small {\n  flex: 1;\n  height: 6px;\n  background: #E8E8F5;\n  border-radius: 3px;\n  overflow: hidden;\n}\n\n.progress-fill-small {\n  height: 100%;\n  background: linear-gradient(90deg, #6C63FF, #5148DF);\n  border-radius: 3px;\n}\n\n.progress-text {\n  font-size: 13px;\n  font-weight: 600;\n  color: #6C63FF;\n  min-width: 35px;\n}\n\n/* FOCUS MODE */\n.focus-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: 100%;\n  padding: 40px 20px;\n}\n\n.timer-display {\n  font-size: 80px;\n  font-weight: 700;\n  color: #6C63FF;\n  font-family: 'Monaco', 'Courier New', monospace;\n  margin: 40px 0;\n  letter-spacing: 10px;\n}\n\n.focus-message {\n  font-size: 16px;\n  color: #7D8595;\n  margin-bottom: 32px;\n  text-align: center;\n}\n\n.completion-emoji {\n  font-size: 64px;\n  margin-bottom: 20px;\n}\n\n.completion-title {\n  font-size: 24px;\n  font-weight: 700;\n  color: #1B2230;\n  margin-bottom: 12px;\n}\n\n.completion-subtitle {\n  font-size: 14px;\n  color: #7D8595;\n  margin-bottom: 32px;\n  text-align: center;\n}\n\n.xp-display {\n  font-size: 32px;\n  font-weight: 700;\n  color: #6C63FF;\n  margin-bottom: 32px;\n}\n\n/* BOTTOM NAVIGATION */\n.navbar {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: white;\n  border-top: 1px solid #E8E8F5;\n  display: flex;\n  justify-content: space-around;\n  align-items: flex-start;\n  padding-bottom: env(safe-area-inset-bottom);\n  padding-top: 12px;\n  z-index: 1000;\n}\n\n.nav-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 8px 12px;\n  text-decoration: none;\n  color: #7D8595;\n  font-size: 10px;\n  cursor: pointer;\n  border: none;\n  background: none;\n  font-family: inherit;\n  transition: all 0.3s ease;\n}\n\n.nav-item.active {\n  color: #6C63FF;\n}\n\n.nav-icon {\n  font-size: 24px;\n}\n\n/* COMMITMENT MODE */\n.commitment-card {\n  background: white;\n  border-radius: 16px;\n  padding: 16px;\n  margin-bottom: 12px;\n  border: 2px solid #E8E8F5;\n}\n\n.commitment-checkbox {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  cursor: pointer;\n}\n\n.checkbox {\n  width: 24px;\n  height: 24px;\n  border: 2px solid #E8E8F5;\n  border-radius: 6px;\n  flex-shrink: 0;\n  transition: all 0.3s ease;\n}\n\n.commitment-checkbox input:checked + .checkbox {\n  background: linear-gradient(135deg, #6C63FF 0%, #5148DF 100%);\n  border-color: #6C63FF;\n}\n\n.commitment-label {\n  font-size: 14px;\n  flex: 1;\n}\n\n/* BLOCK SCREEN */\n.block-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: 100%;\n  padding: 40px 20px;\n  text-align: center;\n}\n\n.block-icon {\n  font-size: 64px;\n  margin-bottom: 20px;\n}\n\n.block-title {\n  font-size: 20px;\n  font-weight: 700;\n  color: #E56770;\n  margin-bottom: 12px;\n}\n\n.blocked-apps {\n  background: #FFF5F5;\n  border-radius: 12px;\n  padding: 16px;\n  margin: 24px 0;\n  text-align: left;\n}\n\n.blocked-app {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 8px 0;\n  font-size: 14px;\n  color: #1B2230;\n}\n\n.lock-icon {\n  color: #E56770;\n  font-size: 16px;\n}\n\n/* PROGRESS INPUT */\n.progress-input-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n\n.checkbox-group {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n\n.checkbox-item {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px;\n  background: white;\n  border-radius: 12px;\n  border: 2px solid #E8E8F5;\n  cursor: pointer;\n}\n\n.checkbox-item input[type=\"checkbox\"] {\n  width: 20px;\n  height: 20px;\n  cursor: pointer;\n}\n\n/* GAURDIAN */\n.guardian-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n\n.guardian-card {\n  background: white;\n  border-radius: 16px;\n  padding: 16px;\n  border: 2px solid #E8E8F5;\n}\n\n.guardian-status {\n  font-size: 13px;\n  color: #31B67A;\n  font-weight: 600;\n}\n\n.permission-list {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  margin-top: 12px;\n}\n\n.permission-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  font-size: 14px;\n}\n\n.permission-check {\n  color: #31B67A;\n}\n\n/* SETTINGS */\n.settings-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n\n.setting-item {\n  background: white;\n  border-radius: 12px;\n  padding: 16px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border: 2px solid #E8E8F5;\n}\n\n/* CONNECTIONS */\n.connection-card {\n  background: white;\n  border-radius: 16px;\n  padding: 16px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border: 2px solid #E8E8F5;\n  margin-bottom: 12px;\n}\n\n.connection-status {\n  font-size: 13px;\n  color: #7D8595;\n}\n\n.connection-status.connected {\n  color: #31B67A;\n  font-weight: 600;\n}\n\n/* EMPTY STATE */\n.empty-state {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 40px 20px;\n  text-align: center;\n}\n\n.empty-icon {\n  font-size: 48px;\n  margin-bottom: 16px;\n}\n\n.empty-title {\n  font-size: 16px;\n  font-weight: 600;\n  color: #1B2230;\n  margin-bottom: 8px;\n}\n\n.empty-text {\n  font-size: 14px;\n  color: #7D8595;\n  margin-bottom: 20px;\n}\n\n/* SCROLLABLE */\n::-webkit-scrollbar {\n  width: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: #DDD5F0;\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: #B8ABDC;\n}\n\n/* RESPONSIVE */\n@media (max-width: 380px) {\n  .timer-display {\n    font-size: 60px;\n    letter-spacing: 6px;\n  }\n  \n  .header-title {\n    font-size: 24px;\n  }\n  \n  .question-text {\n    font-size: 16px;\n  }\n}\n\n/* DARK MODE (FUTURE) */\n@media (prefers-color-scheme: dark) {\n  html, body {\n    background: #1B2230;\n    color: #F6F7FB;\n  }\n  \n  .card {\n    background: #2A3142;\n    border-color: rgba(108, 99, 255, 0.2);\n  }\n  \n  .card-title,\n  .deliverable-title,\n  .question-text {\n    color: #F6F7FB;\n  }\n  \n  .card-subtitle,\n  .card-text {\n    color: #A8B0C0;\n  }\n  \n  .option {\n    background: #2A3142;\n    border-color: #3A4250;\n    color: #F6F7FB;\n  }\n  \n  .navbar {\n    background: #2A3142;\n    border-top-color: #3A4250;\n  }\n}\n
