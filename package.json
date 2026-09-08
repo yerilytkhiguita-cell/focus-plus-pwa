@@ -1,0 +1,23 @@
+{
+  "name": "focus-plus-pwa",
+  "version": "1.0.0",
+  "description": "FOCUS+ - PWA para ayudar estudiantes a dejar de procrastinar",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server -p 8000"
+  },
+  "keywords": [
+    "pwa",
+    "productivity",
+    "students",
+    "procrastination",
+    "time-management"
+  ],
+  "author": "FOCUS+ Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yerilytkhiguita-cell/focus-plus-pwa.git"
+  }
+}
